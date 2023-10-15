@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 105px auto 15%;
+    padding: 10px;
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: wrap;
+    grid-template-areas: "head head"
+                         "main main"
+                         "foot foot";
+}
+/* 1) I decided on my color scheme to be white, black and some light gray because since this will be a photography and video portfolio I want the content to be the main focus, I want the users eyes to directly go to where there is content. When I think of art gallery I imagine the background of the art to be white walls so that the art pops out.
+
+2) Hexadecimals for white is #FFFFFF, balck is #000000, light gray is #d3d3d3 and gray is #4D4D4D.
+
+3) The background for all pages and header will be white, the header when you scroll down will be sticky so you will see that the background is white when it goes over content in the main section. Text like headers, paragraphs, logo icons, and nav bar will be black. The footer background color and some buttons such as the submit button on contact page will be light gray. Link tags that have been visited will turn gray.*/
+header{
+    grid-area: head;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    padding-top: 15px;
+    background-color: white;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: foot;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: lightgray;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+img{
+    display: block;
+    width: 20%;
+    margin: auto;
+}
+.nowrap{
+    white-space: nowrap;
+}
+.flexcontainer{
+    display: flex;
+    width: 100%;
+}
+.flexcontainer_contact{
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    padding-top: 5px;
+    padding-bottom: 200px;
+}
+.flexitem{
+    flex: 1 0 325px;
+    height: 350px;
+    padding: 10px 15px;
+    margin: 4% 6%;
+}
+/* 1) For main content through out the website I will be using the font style "Inter" and for the heading on the upper left of my site which is a link that takes the user back to the home page I will be using two font styles one for just the initals for is "Inspiration" and the rest of my first name is using the style "Redacted script" the idea for this was to make it look like a signature.
+
+2) header 2 has a size of 450%. I didnt really get to dabble much with sizes for anything else they all have default sizes, I do plan on changing this once I see a different page with paragraphs since my home page does not have any, but I do plan on using a font size of 16px for paragraphs. Headers will all be uppercase. */
+body{
+    font-family: "Inter" , sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.Social-Media{
+    display: flex;
+    width: 350px;
+    margin: auto;
+    padding-top: 15px;
+    justify-content: space-evenly;
+}
+.h2{
+    font-size: 450%;
+}
+.profile-pic-figure{
+    width: 100%;
+}
+.profile-pic-figure img{
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+}
+.profile-pic-figure-2 img{
+    width: 60%;
+    height: auto;
+    min-width: 100px;
+}
+.profile-pic-figure-3 img{
+    width: 75%;
+    height: auto;
+    min-width: 100px;
+}
+h1, h2, h3{
+    text-transform: uppercase;
+}
+h1{
+    font-family: "Inspiration", cursive;
+    padding-left: 40px;
+}
+.redacted{
+    font-family: "Redacted Script", cursive;
+}
+h3{
+    text-align: center;
+    white-space: pre-wrap;   
+}
+p{
+    font-size: 1.5rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    color: rgb(77, 77, 77);
+}
+a:active{
+    color: black;
+}
+ul{
+    list-style-type: none;
+    padding: 0.5rem;
+    text-align: right;
+    margin: 0;
+}
+li{
+    display: inline-block;
+    margin-inline: 0.5rem;
+}
+.photo-gallery{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    padding: 180px 150px;
+}
+.pic{
+    position: static;
+}
+.pic img{
+    width: 100%;
+    height: 100%;
+}
+form{
+    width: 90%;
+    max-width: 600px;
+    font-weight: bold;
+}
+.input-group{
+    margin-bottom: 20px;
+}
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid silver;
+    color: black;
+    background-color: #f6f6f6;
+    font-size: 15px;
+}
+.fieldname{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fieldname .input-group{
+    flex-basis: 48%;
+}
+button{
+    padding: 10px 10px;
+    outline: none;
+    border-width: 2px;
+    border-style: solid;
+    overflow: visible;
+    background-color: transparent;
+    color: #000;
+    width: 50%;
+    margin-left: 100px;
+    cursor: pointer;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 700;
+}
+@media screen and (max-width: 1024px){
+    .profile-pic-figure img{
+        width: 80%;
+        height: auto;
+    }
+    .profile-pic-figure-2 img{
+        height: auto;
+    }
+    .profile-pic-figure-3 img{
+        width: 100%;
+    }
+    .h2{
+        font-size: 300%;
+    }
+    input, textarea{
+        padding: 5px;  
+    }
+    button{
+        padding: 5px 5px;
+        width: 50%;
+        margin-left: 60px;
+    }
+    .photo-gallery{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+        padding: 130px;
+    }
+    .flexcontainer_contact{
+        padding: 10px 10px;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 768px){
+    .profile-pic-figure img{
+        width: 90%;
+    }
+    .profile-pic-figure-2 img{
+        width:120%
+    }
+    .profile-pic-figure-3 img{
+        width: 110%;
+    }
+    .h2{
+        font-size: 180%;
+    }
+    .flexitem{
+        flex: 1 0 180px;
+    }
+    input, textarea{
+        padding: 5px;  
+    }
+    button{
+        padding: 5px 5px;
+        width: 30%;
+        margin-left: 60px;
+        font-size: 8px;
+    }
+    .photo-gallery{
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+        padding: 120px 10px;
+    }
+    .flexcontainer_contact{
+        padding-bottom: 180px;
+    }
+    p{
+        padding-bottom: 100px;
+        font-size: 1rem;
+    }
+}
